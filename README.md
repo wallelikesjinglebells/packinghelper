@@ -2,14 +2,12 @@
 
 A local, browser-based app that asks you a series of questions and spits out a personalised packing list, downloadable as a Markdown file.
 
-No server, no dependencies, no install. Just open `index.html`.
-
 ---
 
 ## Getting started
 
 ```
-double-click index.html   (or drag it into a browser tab)
+double-click index.html
 ```
 
 ---
@@ -22,14 +20,14 @@ packinghelper/
 ├── css/
 │   └── style.css        — all visual styling
 └── js/
-    ├── questions.js     ← YOU EDIT THIS: question definitions
-    ├── packingList.js   ← YOU EDIT THIS: packing items + conditions
-    └── app.js           — quiz engine, renderer, MD exporter (rarely touched)
+    ├── questions.js     ← question definitions
+    ├── packingList.js   ← packing items + conditions
+    └── app.js           — quiz engine, renderer, MD exporter
 ```
 
 ---
 
-## Customising questions (`js/questions.js`)
+## Customizing questions (`js/questions.js`)
 
 Each entry in the `QUESTIONS` array is one screen in the wizard.
 
@@ -64,7 +62,7 @@ options: [
 
 ---
 
-## Customising the packing list (`js/packingList.js`)
+## Customizing the packing list (`js/packingList.js`)
 
 Each entry in `PACKING_ITEMS` describes one item and the condition under which it appears.
 
