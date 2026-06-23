@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packing Helper</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- ── Screen 1: Intro ─────────────────────────────────────────── -->
+    <section id="screen-intro">
+      <div class="card intro-card">
+        <h1>🧳 Packing Helper</h1>
+        <p class="subtitle">
+          Answer a few questions and get a personalised packing list —
+          downloadable as a Markdown file.
+        </p>
+        <button id="btn-start" class="btn-primary">Let's go →</button>
+      </div>
+    </section>
+
+    <!-- ── Screen 2: Quiz ──────────────────────────────────────────── -->
+    <section id="screen-quiz" hidden>
+      <div class="quiz-header">
+        <div class="progress-track">
+          <div id="progress-bar" class="progress-fill"></div>
+        </div>
+        <p id="progress-text" class="progress-label"></p>
+      </div>
+      <!-- Question content is injected here by app.js -->
+      <div id="question-card" class="card question-card"></div>
+    </section>
+
+    <!-- ── Screen 3: Results ───────────────────────────────────────── -->
+    <section id="screen-results" hidden>
+      <div class="results-header">
+        <h2>Your Packing List</h2>
+        <div class="results-actions">
+          <button id="btn-download" class="btn-primary">⬇ Download .md</button>
+          <button id="btn-restart" class="btn-secondary">Start over</button>
+        </div>
+      </div>
+      <!-- Packing list is injected here by app.js -->
+      <div id="packing-list"></div>
+    </section>
+
+  </div>
+
+  <!--
+    Load order matters:
+      1. questions.js   — defines QUESTIONS (global array)
+      2. packingList.js — defines PACKING_ITEMS (global array)
+      3. app.js         — reads both arrays; must come last
+  -->
+  <script src="js/questions.js"></script>
+  <script src="js/packingList.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
